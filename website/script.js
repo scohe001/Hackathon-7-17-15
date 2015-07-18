@@ -27,3 +27,11 @@ function test() {
     xmlhttp.send();
 
 }
+
+function passCheck() {
+    var pass = prompt("Password required:", "");
+    if (pass == "password123") {
+        console.log("You got it!");
+        document.location.href = "admin.html";
+    }
+}
