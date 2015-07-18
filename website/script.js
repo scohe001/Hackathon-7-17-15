@@ -30,8 +30,12 @@ function test() {
 
 function passCheck() {
     var pass = prompt("Password required:", "");
-    if (pass == "password123") {
+    if (pass == "toortoor") {
         console.log("You got it!");
         document.location.href = "admin.html";
     }
+}
+
+function myFunction(elmnt,clr) {
+    elmnt.style.color = clr;
 }
