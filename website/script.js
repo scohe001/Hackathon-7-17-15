@@ -7,7 +7,7 @@ function parseJSON(jdata) {
     var testdata = JSON.parse(jdata);
  //   alert(testdata.name);  
     var test_div = document.getElementById("mytest");
-    test_div.innerHTML = "Number of People at FabLab Today: " + testdata.NumPeopleToday;
+    test_div.innerHTML = "Number of People at FabLab Now: " + testdata.NumPeopleToday;
     console.log(jdata);
 }
 
@@ -26,4 +26,12 @@ function test() {
     xmlhttp.open("GET","database.json",true);
     xmlhttp.send();
 
+}
+
+function passCheck() {
+    var pass = prompt("Password required:", "");
+    if (pass == "password123") {
+        console.log("You got it!");
+        document.location.href = "admin.html";
+    }
 }
