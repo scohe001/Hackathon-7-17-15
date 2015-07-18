@@ -8,24 +8,36 @@ function parseJSON(jdata) {
  //   alert(testdata.name);  
     var test_div = document.getElementById("mytest");
     test_div.innerHTML = "Number of People at FabLab Now: " + testdata.NumPeopleToday;
-    console.log(jdata);
 }
 
-function test() {
-    console.log("Hello World!");
+function userInit() {
+    console.log("Hello Admin!");
     
     xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function()
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            console.log("Call me!");
             parseJSON(xmlhttp.responseText);
         }
-    } 
+    }
     xmlhttp.open("GET","database.json",true);
     xmlhttp.send();
 
+}
+
+function adminInit() {
+    var data = parseJSON();
+        xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            parseJSON(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET","database.json",true);
+    xmlhttp.send();
 }
 
 function passCheck() {
